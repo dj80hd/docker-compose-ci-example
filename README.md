@@ -14,7 +14,16 @@ Simple python application to exercise using `docker-compose` as an intergration 
 
 [`run.sh`](run.sh) uses `docker-compose` to start everything up, report test status, and clean everything up.
 
+[`Dockerfile.dcind`] creates a docker-compose-in-docker container that runs `run.sh`
+
 ## Usage
+Run the test locally:
 ```
 ./run.sh
 ```
+
+Run it in a container:
+```
+docker build -t dcind -f Dockerfile.dcind . && docker run --rm -t --privileged dcind
+```
+

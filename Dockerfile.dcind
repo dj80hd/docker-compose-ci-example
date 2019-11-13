@@ -1,0 +1,4 @@
+FROM amidos/dcind:2
+WORKDIR /docker-compose-ci-example
+COPY . .
+CMD /docker-compose-ci-example/run.sh
