@@ -8,7 +8,7 @@ A simple python application with `docker-compose` integration tests that run ins
 ## Overview
 [`app.py`](app.py) is a simple counting web app built with [`Dockerfile.app`](Dockerfile.app) that uses redis for state.
 
-[`itest.sh`](itest.sh) is an integration test script run from a [`Dockerfile.test`](Dockerfile.itest) container that will exit 0 on success, 1 on error.
+[`itest.sh`](itest.sh) is an integration test script run from a [`Dockerfile.itest`](Dockerfile.itest) container that will exit 0 on success, 1 on error.
 
 [`docker-compose.yaml`](docker-compose.yaml) starts up redis and the app containers.  It also starts the test container to run tests against the app.
 
