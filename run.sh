@@ -2,6 +2,9 @@
 
 # Use docker-compose to run an itegration test
 
+# ci systems (e.g. concourse) dump in you a tempdir
+cd "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 # setup
 docker-compose build
 docker-compose up -d

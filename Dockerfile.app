@@ -6,6 +6,6 @@ RUN apk add --no-cache gcc musl-dev linux-headers
 RUN echo redis >> requirements.txt
 RUN echo flask >> requirements.txt
 RUN pip install -r requirements.txt
-COPY app.py .
+COPY . .
 EXPOSE 5000
 CMD ["flask", "run"]

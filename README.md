@@ -27,3 +27,12 @@ Run docker-compose integration tests in docker:
 docker build -t dcind -f Dockerfile.dcind . && docker run --rm -t --privileged dcind
 ```
 
+## Concourse
+I was able to get a concourse job to correctly run this as follows:
+```
+docker build -f Dockerfile.dcind -t dj80hd/dcind .
+docker push dj80hd/dcind .
+fly -t sh sp -c pipeline.yaml -p dcind
+fly -t sh up -p dcind
+fly -t sh tj -j dcind/dcind -w
+```
