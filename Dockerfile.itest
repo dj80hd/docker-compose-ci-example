@@ -1,0 +1,5 @@
+# Simple container to run itegration tests
+FROM alpine:3.10.3
+RUN apk add curl
+COPY itest.sh /
+CMD sleep 3600

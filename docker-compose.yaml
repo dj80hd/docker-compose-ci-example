@@ -1,0 +1,14 @@
+itest:
+  build: .
+  dockerfile: Dockerfile.itest
+  links:
+    - web
+web:
+  build: .
+  dockerfile: Dockerfile.app
+  links:
+    - redis
+  ports:
+    - "5000:5000"
+redis:
+    image: redis:alpine
