@@ -8,13 +8,13 @@ A simple python application with `docker-compose` integration tests that run ins
 ## Overview
 [`app.py`](app.py) is a simple counting web app built with [`Dockerfile.app`](Dockerfile.app) that uses redis for state.
 
-[`itest.sh`](itest.sh) is an integration test script added to containers built with [`Dockerfile.test`](Dockerfile.itest) that will exit 0 on success, 1 on error.
+[`itest.sh`](itest.sh) is an integration test script run from a [`Dockerfile.test`](Dockerfile.itest) container that will exit 0 on success, 1 on error.
 
-[`docker-compose.yaml`](docker-compose.yaml) starts the app container along with the redis container upon which it depends.  It also starts the test container to run tests against the app.
+[`docker-compose.yaml`](docker-compose.yaml) starts up redis and the app containers.  It also starts the test container to run tests against the app.
 
 [`run.sh`](run.sh) uses `docker-compose` to start everything up, report test status, and clean everything up.
 
-[`Dockerfile.dcind`] creates a docker-compose-in-docker container that runs `run.sh`
+[`Dockerfile.dcind`](Dockerfile.dcind) Is used to run `run.sh` inside a container.
 
 ## Usage
 Run docker-compose integration tests locally:
