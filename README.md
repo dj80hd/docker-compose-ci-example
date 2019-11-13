@@ -30,10 +30,14 @@ docker build -t dcind -f Dockerfile.dcind . && docker run --rm -t --privileged d
 ```
 
 ## Concourse
-I was able to get a concourse job to correctly run this as follows:
+Push a container from `Dockerfile.dcind`
 ```
 docker build -f Dockerfile.dcind -t dj80hd/dcind .
 docker push dj80hd/dcind .
+```
+
+Create and start a pipeline that runs it
+```
 fly -t sh sp -c pipeline.yaml -p dcind
 fly -t sh up -p dcind
 fly -t sh tj -j dcind/dcind -w
