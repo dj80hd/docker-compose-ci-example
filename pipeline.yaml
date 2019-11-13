@@ -1,8 +1,16 @@
 ---
+resources:
+  - name: resource-dcind
+    type: git
+    source:
+      uri: https://github.com/dj80hd/docker-compose-ci-example
+      branch: master
 jobs:
   - name: dcind
     public: true
     plan:
+      - get: resource-dcind
+        trigger: true
       - task: dcind
         privileged: true
         config:
