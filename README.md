@@ -4,7 +4,9 @@ A simple python application with `docker-compose` integration tests that run ins
 
 ## Background
 
-Concourse [does not support docker-compose well](https://github.com/concourse/concourse/issues/324).  [`dcind`](https://github.com/meAmidos/dcind) is one of the work-arounds and the basis of this example.
+Concourse [does not support docker-compose well](https://github.com/concourse/concourse/issues/324).  
+
+[`dcind`](https://github.com/meAmidos/dcind) is one of the work-arounds and the basis of this example.
 
 ## Setup
 `docker` and `docker-compose` are required.
