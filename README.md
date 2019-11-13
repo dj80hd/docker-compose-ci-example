@@ -16,5 +16,5 @@ Simple python application to exercise using `docker-compose` as an intergration 
 
 ## Usage
 ```
-run.sh
+./run.sh
 ```
