@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 # Use docker-compose to run an itegration test
 
