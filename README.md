@@ -1,4 +1,4 @@
-# dcci (docker-compose ci)
+# docker-compose ci example
 
 Simple python application to exercise using `docker-compose` as an intergration testing tool in a ci (continuous integration) system.
 
