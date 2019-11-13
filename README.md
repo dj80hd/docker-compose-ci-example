@@ -42,7 +42,7 @@ docker build -f Dockerfile.dcind -t dj80hd/dcind .
 docker push dj80hd/dcind .
 ```
 
-Create and start a pipeline that runs it
+Create, start, and watch a pipeline that runs it
 ```
 export FLY_TARGET=whatever
 fly -t ${FLY_TARGET} sp -c pipeline.yaml -p dcind
