@@ -16,6 +16,8 @@ A simple python application with `docker-compose` integration tests that run ins
 
 [`Dockerfile.dcind`](Dockerfile.dcind) Is used to run `run.sh` inside a container.
 
+[`pipeline.yaml`](pipeline.yaml) is a concourse pipeline that runs the integration tests using dcind.
+
 ## Usage
 Run docker-compose integration tests locally:
 ```
