@@ -1,6 +1,6 @@
 # docker-compose ci example
 
-Simple python application to exercise using `docker-compose` as an intergration testing tool in a ci (continuous integration) system.
+A simple python application with `docker-compose` integration tests that run inside a container so that in can be used in a continuous integration pipeline like concourse.
 
 ## Setup
 `docker` and `docker-compose` are required.
