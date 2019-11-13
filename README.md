@@ -2,6 +2,10 @@
 
 A simple python application with `docker-compose` integration tests that run inside a container so that in can be used in a continuous integration pipeline like concourse.
 
+## Background
+
+Concourse [does not support docker-compose well](https://github.com/concourse/concourse/issues/324).  [`dcind`](https://github.com/meAmidos/dcind) is one of the work-arounds and the basis of this example.
+
 ## Setup
 `docker` and `docker-compose` are required.
 
@@ -38,7 +42,8 @@ docker push dj80hd/dcind .
 
 Create and start a pipeline that runs it
 ```
-fly -t sh sp -c pipeline.yaml -p dcind
-fly -t sh up -p dcind
-fly -t sh tj -j dcind/dcind -w
+export FLY_TARGET=whatever
+fly -t ${FLY_TARGET} sp -c pipeline.yaml -p dcind
+fly -t ${FLY_TARGET} up -p dcind
+fly -t ${FLY_TARGET} tj -j dcind/dcind -w
 ```
