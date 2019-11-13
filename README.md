@@ -17,12 +17,12 @@ Simple python application to exercise using `docker-compose` as an intergration 
 [`Dockerfile.dcind`] creates a docker-compose-in-docker container that runs `run.sh`
 
 ## Usage
-Run the test locally:
+Run docker-compose integration tests locally:
 ```
 ./run.sh
 ```
 
-Run it in a container:
+Run docker-compose integration tests in docker:
 ```
 docker build -t dcind -f Dockerfile.dcind . && docker run --rm -t --privileged dcind
 ```
