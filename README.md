@@ -16,13 +16,13 @@ Concourse [does not support docker-compose well](https://github.com/concourse/co
 
 [`itest.sh`](itest.sh) is an integration test script run from a [`Dockerfile.itest`](Dockerfile.itest) container that will exit 0 on success, 1 on error.
 
-[`docker-compose.yaml`](docker-compose.yaml) starts up redis and the app containers.  It also starts the test container to run tests against the app.
+[`docker-compose.yaml`](docker-compose.yaml) contains configuration to start up the app, redis, and integration test containers.
 
-[`run.sh`](run.sh) uses `docker-compose` to start everything up, report test status, and clean everything up.
+[`run.sh`](run.sh) uses this configuration and `docker-compose` to start everything up, run integration tests, report test status, and clean everything up.
 
 [`Dockerfile.dcind`](Dockerfile.dcind) Is used to run `run.sh` inside a container.
 
-[`pipeline.yaml`](pipeline.yaml) is a concourse pipeline that runs the integration tests using dcind.
+[`pipeline.yaml`](pipeline.yaml) is a concourse pipeline that executes `run.sh` inside of a container built with `Dockerfile.dcind`.
 
 ## Usage
 Run docker-compose integration tests locally:
