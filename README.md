@@ -14,15 +14,14 @@ Concourse [does not support docker-compose well](https://github.com/concourse/co
 ## Overview
 [`app.py`](app.py) is a simple counting web app built with [`Dockerfile.app`](Dockerfile.app) that uses redis for state.
 
-[`itest.sh`](itest.sh) is an integration test script run from a [`Dockerfile.itest`](Dockerfile.itest) container that will exit 0 on success, 1 on error.
+[`itest.sh`](itest.sh) is an integration test script run inside a container built from [`Dockerfile.itest`](Dockerfile.itest).
+o
 
 [`docker-compose.yaml`](docker-compose.yaml) contains configuration to start up the app, redis, and integration test containers.
 
 [`run.sh`](run.sh) uses this configuration and `docker-compose` to start everything up, run integration tests, report test status, and clean everything up.
 
-[`Dockerfile.dcind`](Dockerfile.dcind) Is used to run `run.sh` inside a container.
-
-[`pipeline.yaml`](pipeline.yaml) is a concourse pipeline that executes `run.sh` inside of a container built with `Dockerfile.dcind`.
+[`pipeline.yaml`](pipeline.yaml) is a concourse pipeline that executes [`run.sh`](run.sh) inside of a container built with [`Dockerfile.dcind`](Dockerfile.dcind).
 
 ## Usage
 Run docker-compose integration tests locally:
